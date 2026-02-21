@@ -1,1389 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Golden Crust Co. — Artisan Pies & Quiches · Leander, TX</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Naomi's Pies — Logo Options</title>
+<link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Cormorant+Upright:wght@300;400;600&family=Mrs+Saint+Delafield&family=Playfair+Display:ital,wght@0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,700;1,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet"/>
 <style>
-  :root {
-    --cream: #faf6f0;
-    --parchment: #f0e8d8;
-    --warm-brown: #5c3d2e;
-    --deep-brown: #3a2214;
-    --rust: #b85c38;
-    --gold: #c9943a;
-    --sage: #7a8c6e;
-    --blush: #e8c4b0;
-    --ink: #1e1208;
-  }
-
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  html { scroll-behavior: smooth; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
 
   body {
-    background-color: var(--cream);
-    color: var(--ink);
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 18px;
-    line-height: 1.7;
-    overflow-x: hidden;
-  }
-
-  /* ── NOISE TEXTURE OVERLAY ── */
-  body::before {
-    content: '';
-    position: fixed; inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-    pointer-events: none; z-index: 9999; opacity: .4;
-  }
-
-  /* ── NAV ── */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 1.2rem 3rem;
-    background: rgba(250,246,240,0.9);
-    backdrop-filter: blur(8px);
-    border-bottom: 1px solid rgba(92,61,46,0.12);
-  }
-
-  .nav-logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.15rem;
-    font-weight: 900;
-    letter-spacing: 0.08em;
-    color: var(--warm-brown);
-    text-decoration: none;
-    text-transform: uppercase;
-  }
-
-  .nav-links {
-    display: flex; gap: 2.5rem; list-style: none;
-  }
-
-  .nav-links a {
-    font-family: 'Jost', sans-serif;
-    font-size: 0.75rem;
-    font-weight: 500;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--warm-brown);
-    text-decoration: none;
-    transition: color 0.3s;
-  }
-  .nav-links a:hover { color: var(--rust); }
-
-  .nav-cta {
-    font-family: 'Jost', sans-serif;
-    font-size: 0.75rem;
-    font-weight: 500;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    background: var(--warm-brown);
-    color: var(--cream);
-    padding: 0.6rem 1.5rem;
-    text-decoration: none;
-    border: none;
-    cursor: pointer;
-    transition: background 0.3s;
-  }
-  .nav-cta:hover { background: var(--rust); }
-
-  /* ── HERO ── */
-  .hero {
+    background: #f5efe6;
+    font-family: sans-serif;
     min-height: 100vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding-top: 80px;
-    position: relative;
-  }
-
-  .hero-text {
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
-    padding: 6rem 4rem 6rem 5rem;
-    position: relative;
-    z-index: 2;
-  }
-
-  .hero-eyebrow {
-    font-family: 'Jost', sans-serif;
-    font-size: 0.7rem;
-    font-weight: 500;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--rust);
-    margin-bottom: 1.5rem;
-    opacity: 0;
-    animation: fadeUp 0.8s ease 0.2s forwards;
-  }
-
-  .hero h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(3rem, 6vw, 5.5rem);
-    font-weight: 900;
-    line-height: 1.05;
-    color: var(--deep-brown);
-    margin-bottom: 1.5rem;
-    opacity: 0;
-    animation: fadeUp 0.8s ease 0.4s forwards;
-  }
-
-  .hero h1 em {
-    font-style: italic;
-    color: var(--rust);
-  }
-
-  .hero-desc {
-    font-size: 1.2rem;
-    font-weight: 300;
-    color: var(--warm-brown);
-    max-width: 480px;
-    margin-bottom: 2.5rem;
-    opacity: 0;
-    animation: fadeUp 0.8s ease 0.6s forwards;
-  }
-
-  .hero-badges {
-    display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 2.5rem;
-    opacity: 0;
-    animation: fadeUp 0.8s ease 0.75s forwards;
-  }
-
-  .badge {
-    font-family: 'Jost', sans-serif;
-    font-size: 0.65rem;
-    font-weight: 500;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    padding: 0.4rem 0.9rem;
-    border: 1px solid var(--warm-brown);
-    color: var(--warm-brown);
-    background: transparent;
-  }
-
-  .hero-actions {
-    display: flex; gap: 1rem; align-items: center;
-    opacity: 0;
-    animation: fadeUp 0.8s ease 0.9s forwards;
-  }
-
-  .btn-primary {
-    font-family: 'Jost', sans-serif;
-    font-size: 0.75rem;
-    font-weight: 500;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    background: var(--rust);
-    color: white;
-    padding: 1rem 2.5rem;
-    text-decoration: none;
-    transition: background 0.3s, transform 0.2s;
-    display: inline-block;
-  }
-  .btn-primary:hover { background: var(--warm-brown); transform: translateY(-2px); }
-
-  .btn-ghost {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1rem;
-    font-style: italic;
-    color: var(--warm-brown);
-    text-decoration: none;
-    border-bottom: 1px solid var(--warm-brown);
-    padding-bottom: 2px;
-    transition: color 0.3s;
-  }
-  .btn-ghost:hover { color: var(--rust); border-color: var(--rust); }
-
-  /* ── HERO IMAGE SIDE ── */
-  .hero-image {
-    position: relative;
-    overflow: hidden;
-    opacity: 0;
-    animation: fadeIn 1.2s ease 0.3s forwards;
-  }
-
-  .hero-image-inner {
-    position: absolute; inset: 0;
-    background: url('apple-cranberry-pie.png') center center / cover no-repeat;
-  }
-
-  .hero-image-inner::after {
-    content: '';
-    position: absolute; inset: 0;
-    background: linear-gradient(135deg, rgba(58,34,20,0.5) 0%, rgba(92,48,32,0.25) 50%, rgba(30,12,8,0.5) 100%);
-  }
-
-  .hero-image-overlay {
-    position: absolute; inset: 0;
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
-    gap: 1rem;
-    padding: 3rem;
-  }
-
-  /* Decorative pie illustration */
-  .pie-illustration {
-    width: 260px; height: 260px;
-    position: relative;
-  }
-
-  .pie-illustration svg { width: 100%; height: 100%; filter: drop-shadow(0 20px 40px rgba(0,0,0,0.4)); }
-
-  .hero-image-caption {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 0.9rem;
-    font-style: italic;
-    color: rgba(255,255,255,0.75);
-    letter-spacing: 0.05em;
-    text-align: center;
-  }
-
-  .hero-scroll-hint {
-    position: absolute;
-    bottom: 2rem; left: 50%;
-    transform: translateX(-50%);
-    display: flex; flex-direction: column; align-items: center; gap: 0.4rem;
-    opacity: 0;
-    animation: fadeIn 1s ease 1.5s forwards;
-  }
-
-  .hero-scroll-hint span {
-    font-family: 'Jost', sans-serif;
-    font-size: 0.6rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--warm-brown);
-  }
-
-  .scroll-line {
-    width: 1px; height: 50px;
-    background: linear-gradient(to bottom, var(--warm-brown), transparent);
-    animation: scrollPulse 2s ease infinite;
-  }
-
-  @keyframes scrollPulse {
-    0%, 100% { opacity: 1; transform: scaleY(1); }
-    50% { opacity: 0.4; transform: scaleY(0.7); }
-  }
-
-  /* ── MARQUEE ── */
-  .marquee-strip {
-    background: var(--warm-brown);
-    color: var(--cream);
-    padding: 0.9rem 0;
-    overflow: hidden;
-    white-space: nowrap;
-  }
-
-  .marquee-inner {
-    display: inline-block;
-    animation: marquee 30s linear infinite;
-  }
-
-  .marquee-inner span {
-    font-family: 'Jost', sans-serif;
-    font-size: 0.65rem;
-    font-weight: 500;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    margin: 0 3rem;
-  }
-
-  .marquee-inner span.dot {
-    color: var(--gold);
-    margin: 0 1.5rem;
-  }
-
-  @keyframes marquee {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-  }
-
-  /* ── SECTIONS ── */
-  section {
-    padding: 6rem 5rem;
-  }
-
-  .section-label {
-    font-family: 'Jost', sans-serif;
-    font-size: 0.65rem;
-    font-weight: 500;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--rust);
-    margin-bottom: 1rem;
-  }
-
-  .section-title {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2rem, 4vw, 3.2rem);
-    font-weight: 900;
-    line-height: 1.1;
-    color: var(--deep-brown);
-    margin-bottom: 1.5rem;
-  }
-
-  .section-title em {
-    font-style: italic;
-    color: var(--rust);
-  }
-
-  .section-body {
-    font-size: 1.1rem;
-    font-weight: 300;
-    color: var(--warm-brown);
-    max-width: 600px;
-  }
-
-  /* ── ABOUT ── */
-  .about {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5rem;
-    align-items: center;
-    background: var(--parchment);
-  }
-
-  .about-image-frame {
-    position: relative;
-  }
-
-  .about-image-box {
-    width: 100%;
-    aspect-ratio: 4/5;
-    background: url('apple-cranberry-pie.png') center center / cover no-repeat;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .about-image-box::before {
-    content: '';
-    position: absolute; inset: 0;
-    background: linear-gradient(to bottom, transparent 50%, rgba(30,12,8,0.6) 100%);
-    z-index: 1;
-  }
-
-  .about-image-content {
-    position: absolute; inset: 0;
-    display: flex; align-items: center; justify-content: center;
-    flex-direction: column; gap: 1rem;
-  }
-
-  .about-monogram {
-    font-family: 'Playfair Display', serif;
-    font-size: 7rem;
-    font-weight: 900;
-    font-style: italic;
-    color: rgba(255,255,255,0.2);
-    line-height: 1;
-    letter-spacing: -0.02em;
-  }
-
-  .about-tag {
-    font-family: 'Jost', sans-serif;
-    font-size: 0.65rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.6);
-    border: 1px solid rgba(255,255,255,0.3);
-    padding: 0.4rem 1rem;
-  }
-
-  .about-frame-accent {
-    position: absolute;
-    top: -1.5rem; left: -1.5rem;
-    width: 60%; height: 60%;
-    border-top: 3px solid var(--rust);
-    border-left: 3px solid var(--rust);
-  }
-
-  .about-frame-accent2 {
-    position: absolute;
-    bottom: -1.5rem; right: -1.5rem;
-    width: 60%; height: 60%;
-    border-bottom: 3px solid var(--gold);
-    border-right: 3px solid var(--gold);
-  }
-
-  .about-credentials {
-    display: flex; flex-direction: column; gap: 0.75rem; margin-top: 2rem;
-  }
-
-  .credential {
-    display: flex; align-items: flex-start; gap: 1rem;
-  }
-
-  .credential-icon {
-    width: 2rem; height: 2rem; flex-shrink: 0;
-    background: var(--rust);
-    display: flex; align-items: center; justify-content: center;
-    color: white; font-size: 0.8rem;
-  }
-
-  .credential-text strong {
-    font-family: 'Jost', sans-serif;
-    font-weight: 500;
-    font-size: 0.85rem;
-    letter-spacing: 0.05em;
-    color: var(--deep-brown);
-    display: block;
-  }
-
-  .credential-text span {
-    font-size: 0.9rem;
-    color: var(--warm-brown);
-    font-style: italic;
-  }
-
-  /* ── GALLERY / SPECIALTIES ── */
-  .specialties {
-    background: var(--cream);
-  }
-
-  .specialties-header {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: end;
-    margin-bottom: 4rem;
-  }
-
-  .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: auto auto;
-    gap: 1.5rem;
-  }
-
-  .gallery-item {
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-  }
-
-  .gallery-item.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .gallery-item:nth-child(1) { grid-column: 1 / 2; grid-row: 1 / 3; }
-  .gallery-item:nth-child(2) { grid-column: 2 / 3; grid-row: 1 / 2; }
-  .gallery-item:nth-child(3) { grid-column: 3 / 4; grid-row: 1 / 2; }
-  .gallery-item:nth-child(4) { grid-column: 2 / 3; grid-row: 2 / 3; }
-  .gallery-item:nth-child(5) { grid-column: 3 / 4; grid-row: 2 / 3; }
-  .gallery-item:nth-child(6) { grid-column: 1 / 3; }
-  .gallery-item:nth-child(7) { grid-column: 3 / 4; grid-row: 3 / 4; }
-
-  .gallery-image {
-    width: 100%;
-    aspect-ratio: 1;
-    display: flex; align-items: center; justify-content: center;
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.6s ease;
-  }
-
-  .gallery-item:nth-child(1) .gallery-image { aspect-ratio: 2/3; }
-  .gallery-item:nth-child(6) .gallery-image { aspect-ratio: 2/1; }
-
-  .gallery-item:hover .gallery-image { transform: scale(1.04); }
-
-  .gallery-bg {
-    position: absolute; inset: 0;
-    background-size: cover;
-    background-position: center;
-    transition: transform 0.6s ease;
-  }
-
-  .gallery-item:hover .gallery-bg { transform: scale(1.06); }
-
-  /* Fallback color underneath each photo */
-  .gallery-bg-1 { background-color: #c9943a; }
-  .gallery-bg-2 { background-color: #b85c38; }
-  .gallery-bg-3 { background-color: #7a8c6e; }
-  .gallery-bg-4 { background-color: #5c3d2e; }
-  .gallery-bg-5 { background-color: #d4a574; }
-  .gallery-bg-6 { background-color: #3a2214; }
-  .gallery-bg-7 { background-color: #e8c4b0; }
-
-  /* Dark gradient scrim over photos so captions are readable */
-  .gallery-bg::after {
-    content: '';
-    position: absolute; inset: 0;
-    background: linear-gradient(to top, rgba(30,12,8,0.55) 0%, transparent 60%);
-  }
-
-  .gallery-icon {
-    position: relative; z-index: 1;
-    display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
-  }
-
-  .gallery-icon svg { opacity: 0.4; }
-
-  .gallery-label-text {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 0.9rem;
-    font-style: italic;
-    color: rgba(255,255,255,0.6);
-    letter-spacing: 0.05em;
-  }
-
-  .gallery-caption {
-    padding: 0.8rem 0 0;
-  }
-
-  .gallery-caption h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: var(--deep-brown);
-    margin-bottom: 0.2rem;
-  }
-
-  .gallery-caption p {
-    font-size: 0.9rem;
-    font-style: italic;
-    color: var(--warm-brown);
-  }
-
-  .gallery-overlay {
-    position: absolute; inset: 0;
-    background: rgba(58,34,20,0.6);
-    display: flex; align-items: center; justify-content: center;
-    opacity: 0;
-    transition: opacity 0.4s ease;
-    z-index: 2;
-  }
-
-  .gallery-item:hover .gallery-overlay { opacity: 1; }
-
-  .gallery-overlay-text {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.2rem;
-    font-style: italic;
-    color: white;
-    text-align: center;
-    padding: 1rem;
-  }
-
-  /* ── SIGNATURE RECIPE CALLOUT ── */
-  .signature {
-    background: var(--warm-brown);
-    color: var(--cream);
-    text-align: center;
-    padding: 5rem;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .signature::before {
-    content: '"';
-    position: absolute;
-    top: -2rem; left: 5%;
-    font-family: 'Playfair Display', serif;
-    font-size: 20rem;
-    color: rgba(255,255,255,0.04);
-    line-height: 1;
-    pointer-events: none;
-  }
-
-  .signature .section-label { color: var(--gold); }
-
-  .signature .section-title { color: var(--cream); max-width: 700px; margin: 0 auto 1.5rem; }
-
-  .signature p {
-    font-size: 1.2rem;
-    color: rgba(255,255,255,0.7);
-    max-width: 580px;
-    margin: 0 auto 2.5rem;
-    font-style: italic;
-  }
-
-  .signature-tag {
-    display: inline-block;
-    font-family: 'Jost', sans-serif;
-    font-size: 0.65rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--gold);
-    border: 1px solid rgba(201,148,58,0.5);
-    padding: 0.5rem 1.5rem;
-    margin: 0.3rem;
-  }
-
-  /* ── SERVICES ── */
-  .services {
-    background: var(--parchment);
-  }
-
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
-    margin-top: 3rem;
+    padding: 3rem 2rem;
   }
 
-  .service-card {
-    padding: 2.5rem;
-    background: var(--cream);
-    border-top: 3px solid var(--rust);
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-
-  .service-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 20px 40px rgba(58,34,20,0.12);
-  }
-
-  .service-number {
-    font-family: 'Playfair Display', serif;
-    font-size: 3rem;
-    font-weight: 900;
-    color: var(--rust);
-    opacity: 0.25;
-    line-height: 1;
-    margin-bottom: 1rem;
-  }
-
-  .service-card h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: var(--deep-brown);
-    margin-bottom: 0.75rem;
-  }
-
-  .service-card p {
-    font-size: 1rem;
-    color: var(--warm-brown);
-    font-style: italic;
-    line-height: 1.7;
-  }
-
-  /* ── CRUST PHILOSOPHY ── */
-  .philosophy {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0;
-    min-height: 500px;
-  }
-
-  .philosophy-text {
-    background: var(--deep-brown);
-    color: var(--cream);
-    padding: 5rem;
-    display: flex; flex-direction: column; justify-content: center;
-  }
-
-  .philosophy-text .section-label { color: var(--gold); }
-  .philosophy-text .section-title { color: var(--cream); }
-  .philosophy-text .section-body { color: rgba(255,255,255,0.65); max-width: 100%; }
-
-  .philosophy-list {
-    list-style: none;
-    margin-top: 2rem;
-    display: flex; flex-direction: column; gap: 0.75rem;
-  }
-
-  .philosophy-list li {
-    font-family: 'Jost', sans-serif;
-    font-size: 0.8rem;
-    font-weight: 500;
-    letter-spacing: 0.1em;
+  h1 {
+    font-family: sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.25em;
     text-transform: uppercase;
-    color: rgba(255,255,255,0.5);
-    padding-left: 1.5rem;
-    position: relative;
-  }
-
-  .philosophy-list li::before {
-    content: '—';
-    position: absolute; left: 0;
-    color: var(--gold);
-  }
-
-  .philosophy-visual {
-    background: linear-gradient(135deg, #c4956a 0%, #7a4030 60%, #3a1f10 100%);
-    display: flex; align-items: center; justify-content: center;
-    padding: 3rem;
-    position: relative; overflow: hidden;
-  }
-
-  .philosophy-visual::before {
-    content: '';
-    position: absolute; inset: 0;
-    background: repeating-linear-gradient(
-      45deg,
-      transparent,
-      transparent 30px,
-      rgba(255,255,255,0.02) 30px,
-      rgba(255,255,255,0.02) 60px
-    );
-  }
-
-  .pie-diagram {
-    position: relative; z-index: 1;
-  }
-
-  /* ── COMMUNITY / POPUP ── */
-  .community {
-    background: var(--cream);
+    color: #999;
+    margin-bottom: 1rem;
     text-align: center;
   }
 
-  .community-inner {
+  .options {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
     max-width: 700px;
-    margin: 0 auto;
   }
 
-  .community-badges {
-    display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; margin-top: 2rem;
-  }
-
-  .community-badge {
-    font-family: 'Jost', sans-serif;
-    font-size: 0.7rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    padding: 0.6rem 1.2rem;
-    border: 1px solid var(--sage);
-    color: var(--sage);
-    background: transparent;
-    transition: background 0.3s, color 0.3s;
-  }
-
-  .community-badge:hover {
-    background: var(--sage);
-    color: white;
-  }
-
-  /* ── CONTACT ── */
-  .contact {
-    background: var(--parchment);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5rem;
+  .option {
+    background: #faf6f0;
+    border: 1px solid #e8ddd0;
+    border-radius: 4px;
+    padding: 3rem 2.5rem;
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    gap: 1.2rem;
+    position: relative;
   }
 
-  .contact-form {
-    display: flex; flex-direction: column; gap: 1.2rem;
-  }
-
-  .form-group {
-    display: flex; flex-direction: column; gap: 0.4rem;
-  }
-
-  .form-group label {
-    font-family: 'Jost', sans-serif;
+  .option-number {
+    position: absolute;
+    top: 1rem; left: 1.2rem;
     font-size: 0.65rem;
-    font-weight: 500;
+    font-weight: 700;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--warm-brown);
+    color: #c9943a;
   }
 
-  .form-group input,
-  .form-group select,
-  .form-group textarea {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1rem;
-    color: var(--ink);
-    background: var(--cream);
-    border: 1px solid rgba(92,61,46,0.25);
-    padding: 0.8rem 1rem;
-    outline: none;
-    transition: border-color 0.3s;
-    -webkit-appearance: none;
+  .option-label {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #b0a090;
   }
 
-  .form-group input:focus,
-  .form-group select:focus,
-  .form-group textarea:focus {
-    border-color: var(--rust);
+  /* ── OPTION 1: Elegant Script ── */
+  .logo-1 {
+    font-family: 'Pinyon Script', cursive;
+    font-size: 5rem;
+    color: #3a2214;
+    line-height: 1.1;
+    letter-spacing: 0.02em;
   }
 
-  .form-group textarea { min-height: 120px; resize: vertical; }
-
-  .form-row {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
-  }
-
-  /* ── FOOTER ── */
-  footer {
-    background: var(--deep-brown);
-    color: rgba(255,255,255,0.5);
-    padding: 3rem 5rem;
+  /* ── OPTION 2: Editorial Serif Stack ── */
+  .logo-2-wrap {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 1rem;
+    gap: 0.1rem;
   }
-
-  .footer-logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.2rem;
-    font-weight: 900;
+  .logo-2-naomi {
+    font-family: 'Cormorant Upright', serif;
+    font-size: 1rem;
+    font-weight: 300;
+    letter-spacing: 0.55em;
+    text-transform: uppercase;
+    color: #b85c38;
+    margin-bottom: 0.1rem;
+  }
+  .logo-2-rule {
+    width: 180px;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #c9943a, transparent);
+    margin: 0.3rem 0;
+  }
+  .logo-2-pies {
+    font-family: 'DM Serif Display', serif;
+    font-size: 5rem;
     font-style: italic;
-    color: var(--cream);
-    letter-spacing: 0.05em;
+    color: #3a2214;
+    line-height: 1;
+    letter-spacing: 0.02em;
   }
 
-  footer p {
-    font-size: 0.8rem;
+  /* ── OPTION 3: Classic Refined Serif ── */
+  .logo-3-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .logo-3-top {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 0.65rem;
+    font-weight: 400;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: #c9943a;
+  }
+  .logo-3-name {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 3.2rem;
+    font-weight: 700;
     font-style: italic;
+    color: #3a2214;
+    letter-spacing: -0.01em;
+    line-height: 1;
   }
-
-  .footer-tagline {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 0.9rem;
-    font-style: italic;
-    color: rgba(255,255,255,0.4);
+  .logo-3-sub {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 0.65rem;
+    font-weight: 400;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: #7a5c48;
   }
-
-  /* ── ANIMATIONS ── */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(24px); }
-    to { opacity: 1; transform: translateY(0); }
+  .logo-3-dots {
+    display: flex; gap: 0.5rem; align-items: center;
   }
-
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+  .logo-3-dots span {
+    width: 3px; height: 3px; border-radius: 50%;
+    background: #c9943a;
+    display: inline-block;
   }
-
-  /* ── RESPONSIVE ── */
-  @media (max-width: 900px) {
-    nav { padding: 1rem 1.5rem; }
-    .nav-links { display: none; }
-
-    .hero { grid-template-columns: 1fr; }
-    .hero-image { display: none; }
-    .hero-text { padding: 4rem 2rem; }
-
-    section { padding: 4rem 2rem; }
-
-    .about { grid-template-columns: 1fr; }
-    .specialties-header { grid-template-columns: 1fr; }
-    .gallery-grid { grid-template-columns: 1fr 1fr; }
-    .gallery-item:nth-child(1) { grid-column: auto; grid-row: auto; }
-    .gallery-item:nth-child(6) { grid-column: auto; grid-row: auto; }
-    .gallery-image { aspect-ratio: 1 !important; }
-
-    .services-grid { grid-template-columns: 1fr; }
-    .philosophy { grid-template-columns: 1fr; }
-    .contact { grid-template-columns: 1fr; }
-    .form-row { grid-template-columns: 1fr; }
-    footer { flex-direction: column; text-align: center; padding: 2rem; }
-    .signature { padding: 3rem 2rem; }
+  .logo-3-dots i {
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    font-family: 'Libre Baskerville', serif;
+    font-style: normal;
+    color: #7a5c48;
   }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav>
-  <a href="#" class="nav-logo">Golden Crust Co.</a>
-  <ul class="nav-links">
-    <li><a href="#about">Our Story</a></li>
-    <li><a href="#gallery">Gallery</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#community">Community</a></li>
-    <li><a href="#contact">Order</a></li>
-  </ul>
-  <a href="#contact" class="nav-cta">Place an Order</a>
-</nav>
+<h1>Logo Options — Naomi's Pies</h1>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-text">
-    <p class="hero-eyebrow">Handcrafted in Leander, Texas</p>
-    <h1>Every Crust,<br/><em>Made with Love</em><br/>from Scratch.</h1>
-    <p class="hero-desc">
-      Artisan pies, quiches & galettes baked fresh to order — sugar-free Amish crust, real fruit, and recipes invented right here in Central Texas.
-    </p>
-    <div class="hero-badges">
-      <span class="badge">Pickup Orders</span>
-      <span class="badge">Catering</span>
-      <span class="badge">Pop-Up Events</span>
-      <span class="badge">No Canned Fruit</span>
-    </div>
-    <div class="hero-actions">
-      <a href="#contact" class="btn-primary">Order Yours Today</a>
-      <a href="#gallery" class="btn-ghost">View the Gallery</a>
-    </div>
+<div class="options">
+
+  <!-- OPTION 1 -->
+  <div class="option">
+    <span class="option-number">Option 1</span>
+    <div class="logo-1">Naomi's Pies</div>
+    <span class="option-label">Flowing Script — Warm &amp; Personal</span>
   </div>
-  <div class="hero-image">
-    <div class="hero-image-inner"></div>
-    <div class="hero-image-overlay">
-      <div class="pie-illustration">
-        <!-- Decorative Pie SVG -->
-        <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <!-- Pie dish -->
-          <ellipse cx="100" cy="165" rx="88" ry="14" fill="rgba(0,0,0,0.3)"/>
-          <!-- Crust base -->
-          <ellipse cx="100" cy="140" rx="80" ry="14" fill="#8b5e3c"/>
-          <!-- Pie sides -->
-          <path d="M20 100 Q20 140 100 140 Q180 140 180 100 L180 95 Q180 135 100 135 Q20 135 20 95 Z" fill="#c4956a"/>
-          <!-- Top crust circle -->
-          <ellipse cx="100" cy="100" rx="80" ry="28" fill="#d4a574"/>
-          <!-- Lattice strips horizontal -->
-          <g opacity="0.7">
-            <rect x="40" y="88" width="120" height="7" rx="3" fill="#b87d4e"/>
-            <rect x="40" y="101" width="120" height="7" rx="3" fill="#b87d4e"/>
-            <rect x="40" y="114" width="120" height="7" rx="3" fill="#b87d4e"/>
-          </g>
-          <!-- Lattice strips vertical -->
-          <g opacity="0.7">
-            <rect x="54" y="82" width="7" height="42" rx="3" fill="#c4956a"/>
-            <rect x="72" y="82" width="7" height="42" rx="3" fill="#c4956a"/>
-            <rect x="90" y="82" width="7" height="42" rx="3" fill="#c4956a"/>
-            <rect x="108" y="82" width="7" height="42" rx="3" fill="#c4956a"/>
-            <rect x="126" y="82" width="7" height="42" rx="3" fill="#c4956a"/>
-            <rect x="144" y="82" width="7" height="42" rx="3" fill="#c4956a"/>
-          </g>
-          <!-- Crust rim -->
-          <ellipse cx="100" cy="100" rx="80" ry="28" fill="none" stroke="#8b5e3c" stroke-width="6"/>
-          <!-- Crimp marks -->
-          <ellipse cx="100" cy="100" rx="80" ry="28" fill="none" stroke="#c4956a" stroke-width="2" stroke-dasharray="8 5"/>
-          <!-- Blueberry filling peek through -->
-          <ellipse cx="100" cy="100" rx="68" ry="23" fill="#3d2875" opacity="0.4"/>
-          <!-- Steam wisps -->
-          <path d="M80 70 Q82 58 80 48" stroke="rgba(255,255,255,0.4)" stroke-width="2" stroke-linecap="round" fill="none"/>
-          <path d="M100 65 Q103 50 100 38" stroke="rgba(255,255,255,0.5)" stroke-width="2.5" stroke-linecap="round" fill="none"/>
-          <path d="M120 70 Q118 55 120 45" stroke="rgba(255,255,255,0.4)" stroke-width="2" stroke-linecap="round" fill="none"/>
-          <!-- Gloss highlight -->
-          <ellipse cx="85" cy="92" rx="22" ry="8" fill="rgba(255,255,255,0.12)" transform="rotate(-20 85 92)"/>
-        </svg>
+
+  <!-- OPTION 2 -->
+  <div class="option">
+    <span class="option-number">Option 2</span>
+    <div class="logo-2-wrap">
+      <div class="logo-2-naomi">Naomi's</div>
+      <div class="logo-2-rule"></div>
+      <div class="logo-2-pies">Pies</div>
+    </div>
+    <span class="option-label">Editorial Italic — Stylish &amp; Modern</span>
+  </div>
+
+  <!-- OPTION 3 -->
+  <div class="option">
+    <span class="option-number">Option 3</span>
+    <div class="logo-3-wrap">
+      <div class="logo-3-top">Handcrafted</div>
+      <div class="logo-3-name">Naomi's Pies</div>
+      <div class="logo-3-dots">
+        <span></span>
+        <i>Leander, Texas</i>
+        <span></span>
       </div>
-      <p class="hero-image-caption">Blueberry-Ginger Lattice Pie<br/><em>An Original Recipe</em></p>
     </div>
+    <span class="option-label">Classic Serif — Refined &amp; Trustworthy</span>
   </div>
-  <div class="hero-scroll-hint">
-    <span>Scroll</span>
-    <div class="scroll-line"></div>
-  </div>
-</section>
 
-<!-- MARQUEE -->
-<div class="marquee-strip">
-  <div class="marquee-inner">
-    <span>Custard Quiches</span><span class="dot">✦</span>
-    <span>Lattice Pies</span><span class="dot">✦</span>
-    <span>Fruit Pies</span><span class="dot">✦</span>
-    <span>Galettes</span><span class="dot">✦</span>
-    <span>Hand Pies</span><span class="dot">✦</span>
-    <span>Mini Pies</span><span class="dot">✦</span>
-    <span>Meat Pies</span><span class="dot">✦</span>
-    <span>Amish Sugar-Free Crust</span><span class="dot">✦</span>
-    <span>No Canned Fruit</span><span class="dot">✦</span>
-    <span>Original Recipes</span><span class="dot">✦</span>
-    <span>Pickup · Catering · Pop-Ups</span><span class="dot">✦</span>
-    <!-- Duplicate for seamless loop -->
-    <span>Custard Quiches</span><span class="dot">✦</span>
-    <span>Lattice Pies</span><span class="dot">✦</span>
-    <span>Fruit Pies</span><span class="dot">✦</span>
-    <span>Galettes</span><span class="dot">✦</span>
-    <span>Hand Pies</span><span class="dot">✦</span>
-    <span>Mini Pies</span><span class="dot">✦</span>
-    <span>Meat Pies</span><span class="dot">✦</span>
-    <span>Amish Sugar-Free Crust</span><span class="dot">✦</span>
-    <span>No Canned Fruit</span><span class="dot">✦</span>
-    <span>Original Recipes</span><span class="dot">✦</span>
-    <span>Pickup · Catering · Pop-Ups</span><span class="dot">✦</span>
-  </div>
 </div>
-
-<!-- ABOUT -->
-<section class="about" id="about">
-  <div class="about-image-frame">
-    <div class="about-image-box">
-      <div class="about-image-content" style="z-index:2; position:relative;">
-        <div class="about-tag" style="background:rgba(30,12,8,0.55); border-color:rgba(255,255,255,0.3); color:rgba(255,255,255,0.75); backdrop-filter:blur(4px);">Est. 2019 · Leander, TX</div>
-      </div>
-    </div>
-    <div class="about-frame-accent"></div>
-    <div class="about-frame-accent2"></div>
-  </div>
-  <div class="about-content">
-    <p class="section-label">Our Story</p>
-    <h2 class="section-title">A Baker Born<br/><em>from Passion</em></h2>
-    <p class="section-body">
-      Since 2019, this kitchen has been a place of discovery, discipline, and deep love for the craft. Formally trained in Culinary Arts, the chef behind Golden Crust Co. has spent years perfecting her art — not following recipes, but creating them.
-    </p>
-    <p class="section-body" style="margin-top:1rem;">
-      From her signature blueberry-ginger pie to rich savory quiches made with farm-fresh custard, every bite tells a story of someone who chose quality over convenience — every single time.
-    </p>
-    <p class="section-body" style="margin-top:1rem;">
-      Now rooted in Leander and eager to share her craft with the greater Austin community, she invites you to taste the difference that real ingredients, real training, and real love make.
-    </p>
-    <div class="about-credentials">
-      <div class="credential">
-        <div class="credential-icon">✦</div>
-        <div class="credential-text">
-          <strong>Culinary Arts Training Certificate</strong>
-          <span>San Antonio, TX</span>
-        </div>
-      </div>
-      <div class="credential">
-        <div class="credential-icon">✦</div>
-        <div class="credential-text">
-          <strong>Training Since 2019</strong>
-          <span>6+ years in the kitchen, perfecting the craft</span>
-        </div>
-      </div>
-      <div class="credential">
-        <div class="credential-icon">✦</div>
-        <div class="credential-text">
-          <strong>Handmade Sugar-Free Amish Crust</strong>
-          <span>Every single pie, no shortcuts</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- GALLERY -->
-<section class="specialties" id="gallery">
-  <div class="specialties-header">
-    <div>
-      <p class="section-label">The Gallery</p>
-      <h2 class="section-title">A Showcase of<br/><em>the Craft</em></h2>
-    </div>
-    <p class="section-body">
-      Fresh fruit, handmade crust, and recipes you won't find anywhere else. No canned shortcuts — only the real thing, shaped with care and baked to golden perfection.
-    </p>
-  </div>
-
-  <div class="gallery-grid">
-    <!-- Item 1: Tall — Quiche -->
-    <div class="gallery-item">
-      <div class="gallery-image">
-        <div class="gallery-bg gallery-bg-1" style="background-image:url('https://images.unsplash.com/photo-1591985666643-9fd44addf716?w=800&q=80');"></div>
-      </div>
-      <div class="gallery-overlay"><p class="gallery-overlay-text">Custard Quiches<br/><em>Savory & satisfying</em></p></div>
-      <div class="gallery-caption">
-        <h3>Custard Quiches</h3>
-        <p>Silky, savory, and baked from scratch</p>
-      </div>
-    </div>
-
-    <!-- Item 2 — Lattice Pies: her own photo! -->
-    <div class="gallery-item">
-      <div class="gallery-image">
-        <div class="gallery-bg gallery-bg-2" style="background-image:url('apple-cranberry-pie.png');"></div>
-      </div>
-      <div class="gallery-overlay"><p class="gallery-overlay-text">Lattice Pies<br/><em>Woven by hand</em></p></div>
-      <div class="gallery-caption">
-        <h3>Lattice Pies</h3>
-        <p>Every strip woven by hand</p>
-      </div>
-    </div>
-
-    <!-- Item 3 — Fresh Fruit Pies -->
-    <div class="gallery-item">
-      <div class="gallery-image">
-        <div class="gallery-bg gallery-bg-3" style="background-image:url('https://images.unsplash.com/photo-1562440499-64c9a111f713?w=800&q=80');"></div>
-      </div>
-      <div class="gallery-overlay"><p class="gallery-overlay-text">Fruit Pies<br/><em>No canned fruit, ever</em></p></div>
-      <div class="gallery-caption">
-        <h3>Fresh Fruit Pies</h3>
-        <p>Real fruit, never canned</p>
-      </div>
-    </div>
-
-    <!-- Item 4 — Galettes -->
-    <div class="gallery-item">
-      <div class="gallery-image">
-        <div class="gallery-bg gallery-bg-4" style="background-image:url('https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=800&q=80');"></div>
-      </div>
-      <div class="gallery-overlay"><p class="gallery-overlay-text">Galettes<br/><em>Rustic & free-form</em></p></div>
-      <div class="gallery-caption">
-        <h3>Rustic Galettes</h3>
-        <p>Free-form, full of character</p>
-      </div>
-    </div>
-
-    <!-- Item 5 — Mini & Hand Pies -->
-    <div class="gallery-item">
-      <div class="gallery-image">
-        <div class="gallery-bg gallery-bg-5" style="background-image:url('https://images.unsplash.com/photo-1587314168485-3236d6710814?w=800&q=80');"></div>
-      </div>
-      <div class="gallery-overlay"><p class="gallery-overlay-text">Mini Pies<br/><em>Perfect portions</em></p></div>
-      <div class="gallery-caption">
-        <h3>Mini & Hand Pies</h3>
-        <p>Ideal for events & catering</p>
-      </div>
-    </div>
-
-    <!-- Item 6: Wide — Blueberry-Ginger Signature -->
-    <div class="gallery-item">
-      <div class="gallery-image">
-        <div class="gallery-bg gallery-bg-6" style="background-image:url('https://images.unsplash.com/photo-1568571780765-9276ac8b75a2?w=1200&q=80'); background-position: center 40%;"></div>
-        <div style="position:absolute;bottom:1.5rem;left:2rem;z-index:3;pointer-events:none;">
-          <div style="font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:900;font-style:italic;color:rgba(255,255,255,0.92);line-height:1.1;text-shadow:0 2px 12px rgba(0,0,0,0.5);">Blueberry-Ginger Pie</div>
-          <div style="font-family:'Jost',sans-serif;font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-top:0.3rem;">An Original Recipe</div>
-        </div>
-      </div>
-      <div class="gallery-overlay"><p class="gallery-overlay-text">The Signature Pie<br/><em>Blueberry meets ginger — an original creation</em></p></div>
-      <div class="gallery-caption">
-        <h3>Blueberry-Ginger Pie</h3>
-        <p>The house specialty — a recipe found nowhere else</p>
-      </div>
-    </div>
-
-    <!-- Item 7 — Savory Meat Pies -->
-    <div class="gallery-item">
-      <div class="gallery-image">
-        <div class="gallery-bg gallery-bg-7" style="background-image:url('https://images.unsplash.com/photo-1603046891726-36bfd957e0bf?w=800&q=80');"></div>
-      </div>
-      <div class="gallery-overlay"><p class="gallery-overlay-text">Savory Meat Pies<br/><em>Hearty & satisfying</em></p></div>
-      <div class="gallery-caption">
-        <h3>Savory Meat Pies</h3>
-        <p>Hearty fillings in a flaky crust</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SIGNATURE -->
-<section class="signature">
-  <p class="section-label">The Signature Creation</p>
-  <h2 class="section-title">Blueberry-Ginger Pie:<br/><em>Born from Curiosity</em></h2>
-  <p>An original recipe invented right here — where the tartness of fresh blueberries meets the warm, spiced kick of ginger, all nestled in a buttery, handmade Amish crust.</p>
-  <div>
-    <span class="signature-tag">No Canned Fruit</span>
-    <span class="signature-tag">Sugar-Free Amish Crust</span>
-    <span class="signature-tag">Original Recipe</span>
-    <span class="signature-tag">Made to Order</span>
-  </div>
-</section>
-
-<!-- SERVICES -->
-<section class="services" id="services">
-  <p class="section-label">How to Order</p>
-  <h2 class="section-title">Ways to Enjoy<br/><em>Golden Crust</em></h2>
-  <div class="services-grid">
-    <div class="service-card">
-      <div class="service-number">01</div>
-      <h3>Pickup Orders</h3>
-      <p>Order ahead and pick up your custom pies fresh from the oven. Available in Leander. Perfect for gift-giving, dinner parties, or simply treating yourself to something extraordinary.</p>
-    </div>
-    <div class="service-card">
-      <div class="service-number">02</div>
-      <h3>Catering</h3>
-      <p>Hosting a gathering, brunch, corporate event, or celebration? We love feeding groups. Mini pies, hand pies, and quiche platters make any event unforgettable. Let's talk about your vision.</p>
-    </div>
-    <div class="service-card">
-      <div class="service-number">03</div>
-      <h3>Pop-Up Events</h3>
-      <p>We're actively seeking partnerships with Austin-area markets, women's groups, and community events. If you run a local market or organization and want to share something special, we'd love to connect.</p>
-    </div>
-  </div>
-</section>
-
-<!-- PHILOSOPHY -->
-<section class="philosophy" style="padding:0;">
-  <div class="philosophy-text">
-    <p class="section-label">The Crust Promise</p>
-    <h2 class="section-title" style="max-width:100%;">Handmade Amish Crust,<br/><em>Every Time</em></h2>
-    <p class="section-body">No shortcuts. No frozen dough. Every crust is made by hand using a traditional Amish recipe — sugar-free, flaky, and deeply flavorful. It's the foundation everything is built on, and it shows in every single bite.</p>
-    <ul class="philosophy-list">
-      <li>Sugar-free Amish recipe</li>
-      <li>Made fresh per order</li>
-      <li>No preservatives or artificial ingredients</li>
-      <li>No canned fruit — ever</li>
-      <li>Original, invented recipes</li>
-      <li>Culinary Arts trained since 2019</li>
-    </ul>
-  </div>
-  <div class="philosophy-visual">
-    <!-- Crust illustration -->
-    <div class="pie-diagram">
-      <svg width="280" height="280" viewBox="0 0 280 280" fill="none" xmlns="http://www.w3.org/2000/svg" style="filter:drop-shadow(0 30px 60px rgba(0,0,0,0.5));">
-        <!-- Outer decorative ring -->
-        <circle cx="140" cy="140" r="130" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
-        <circle cx="140" cy="140" r="110" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
-        <!-- Pie body -->
-        <ellipse cx="140" cy="165" rx="100" ry="28" fill="#5c2e10" opacity="0.7"/>
-        <ellipse cx="140" cy="155" rx="100" ry="28" fill="#7a3f1f"/>
-        <!-- Lattice top -->
-        <ellipse cx="140" cy="140" rx="96" ry="34" fill="#c4956a"/>
-        <!-- Lattice lines -->
-        <g opacity="0.6">
-          <line x1="55" y1="128" x2="225" y2="128" stroke="#8b5e3c" stroke-width="6" stroke-linecap="round"/>
-          <line x1="55" y1="140" x2="225" y2="140" stroke="#8b5e3c" stroke-width="6" stroke-linecap="round"/>
-          <line x1="55" y1="152" x2="225" y2="152" stroke="#8b5e3c" stroke-width="6" stroke-linecap="round"/>
-          <line x1="80" y1="110" x2="80" y2="170" stroke="#a07040" stroke-width="6" stroke-linecap="round"/>
-          <line x1="100" y1="107" x2="100" y2="173" stroke="#a07040" stroke-width="6" stroke-linecap="round"/>
-          <line x1="120" y1="106" x2="120" y2="174" stroke="#a07040" stroke-width="6" stroke-linecap="round"/>
-          <line x1="140" y1="106" x2="140" y2="174" stroke="#a07040" stroke-width="6" stroke-linecap="round"/>
-          <line x1="160" y1="106" x2="160" y2="174" stroke="#a07040" stroke-width="6" stroke-linecap="round"/>
-          <line x1="180" y1="107" x2="180" y2="173" stroke="#a07040" stroke-width="6" stroke-linecap="round"/>
-          <line x1="200" y1="110" x2="200" y2="170" stroke="#a07040" stroke-width="6" stroke-linecap="round"/>
-        </g>
-        <!-- Crust rim -->
-        <ellipse cx="140" cy="140" rx="96" ry="34" fill="none" stroke="#8b5e3c" stroke-width="8"/>
-        <ellipse cx="140" cy="140" rx="96" ry="34" fill="none" stroke="#d4a574" stroke-width="2" stroke-dasharray="10 6"/>
-        <!-- Blueberry color below lattice -->
-        <ellipse cx="140" cy="140" rx="84" ry="29" fill="rgba(60,40,120,0.4)" clip-path=""/>
-        <!-- Shine -->
-        <ellipse cx="118" cy="130" rx="28" ry="10" fill="rgba(255,255,255,0.1)" transform="rotate(-15 118 130)"/>
-        <!-- Label -->
-        <text x="140" y="220" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="11" font-family="Georgia, serif" font-style="italic" letter-spacing="2">handmade with love</text>
-      </svg>
-    </div>
-  </div>
-</section>
-
-<!-- COMMUNITY -->
-<section class="community" id="community">
-  <div class="community-inner">
-    <p class="section-label">Our Community</p>
-    <h2 class="section-title">Rooted in <em>Leander,</em><br/>Reaching Austin</h2>
-    <p class="section-body" style="margin: 0 auto; text-align:center;">
-      Golden Crust Co. was built for women who love homemade things, for homemakers who want to be inspired, and for anyone who believes that the best food comes from someone who truly cares. We're looking to grow with our community — through local markets, pop-up events, and partnerships with groups that share our values.
-    </p>
-    <div class="community-badges">
-      <span class="community-badge">Women-Owned</span>
-      <span class="community-badge">Leander &amp; Austin Markets</span>
-      <span class="community-badge">Pop-Up Partnerships</span>
-      <span class="community-badge">Women's Groups</span>
-      <span class="community-badge">Local Vendors</span>
-      <span class="community-badge">Farmers Markets</span>
-      <span class="community-badge">Community Events</span>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section class="contact" id="contact">
-  <div>
-    <p class="section-label">Get in Touch</p>
-    <h2 class="section-title">Ready to Order?<br/><em>Let's Talk Pie.</em></h2>
-    <p class="section-body">
-      Whether you're ordering for a special occasion, planning an event, or want to discuss a pop-up partnership — we'd love to hear from you. All orders are for pickup only in the Leander area.
-    </p>
-    <div class="about-credentials" style="margin-top:2.5rem;">
-      <div class="credential">
-        <div class="credential-icon">📍</div>
-        <div class="credential-text">
-          <strong>Location</strong>
-          <span>Leander, Texas · Central Austin Area</span>
-        </div>
-      </div>
-      <div class="credential">
-        <div class="credential-icon">🥧</div>
-        <div class="credential-text">
-          <strong>Pickup Only</strong>
-          <span>Orders placed in advance — no walk-ins</span>
-        </div>
-      </div>
-      <div class="credential">
-        <div class="credential-icon">✉</div>
-        <div class="credential-text">
-          <strong>Response Time</strong>
-          <span>Expect a reply within 24–48 hours</span>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div>
-    <form class="contact-form" onsubmit="handleSubmit(event)">
-      <div class="form-row">
-        <div class="form-group">
-          <label for="name">Your Name</label>
-          <input type="text" id="name" placeholder="Jane Smith" required />
-        </div>
-        <div class="form-group">
-          <label for="email">Email Address</label>
-          <input type="email" id="email" placeholder="jane@email.com" required />
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="type">Type of Request</label>
-        <select id="type">
-          <option value="">Select one...</option>
-          <option>Pickup Order</option>
-          <option>Catering Inquiry</option>
-          <option>Pop-Up / Partnership</option>
-          <option>Just Saying Hello</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="pie">Pie Type(s) of Interest</label>
-        <input type="text" id="pie" placeholder="e.g. Blueberry-Ginger, Quiche, Meat Pie..." />
-      </div>
-      <div class="form-group">
-        <label for="message">Tell Me More</label>
-        <textarea id="message" placeholder="Share the occasion, your guest count, any dietary needs, or your pop-up idea..."></textarea>
-      </div>
-      <button type="submit" class="btn-primary" style="border:none;cursor:pointer;font-size:0.75rem;padding:1rem 2.5rem;">Send Your Order Request</button>
-    </form>
-    <div id="form-success" style="display:none;padding:2rem;background:var(--sage);color:white;font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-style:italic;margin-top:1rem;text-align:center;">
-      Thank you! Your message is on its way. Expect a warm reply within 24–48 hours. ✦
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-logo">Golden Crust Co.</div>
-  <p class="footer-tagline">Handmade pies & quiches · Leander, Texas</p>
-  <p style="font-size:0.75rem;font-style:italic;">© 2025 Golden Crust Co. · All orders are for pickup only.</p>
-</footer>
-
-<script>
-  // Scroll animation for gallery items
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
-      if (entry.isIntersecting) {
-        setTimeout(() => {
-          entry.target.classList.add('visible');
-        }, entry.target.dataset.delay || 0);
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1 });
-
-  document.querySelectorAll('.gallery-item').forEach((item, i) => {
-    item.dataset.delay = i * 80;
-    observer.observe(item);
-  });
-
-  // Form submission
-  function handleSubmit(e) {
-    e.preventDefault();
-    document.querySelector('.contact-form').style.display = 'none';
-    document.getElementById('form-success').style.display = 'block';
-  }
-
-  // Smooth nav active state
-  const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav-links a');
-
-  window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(section => {
-      if (window.scrollY >= section.offsetTop - 120) {
-        current = section.getAttribute('id');
-      }
-    });
-    navLinks.forEach(link => {
-      link.style.color = '';
-      if (link.getAttribute('href') === '#' + current) {
-        link.style.color = 'var(--rust)';
-      }
-    });
-  });
-</script>
 
 </body>
 </html>
