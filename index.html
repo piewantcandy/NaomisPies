@@ -1,204 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Naomi's Pies — Logo Options</title>
-<link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Cormorant+Upright:wght@300;400;600&family=Mrs+Saint+Delafield&family=Playfair+Display:ital,wght@0,900;1,400;1,700&family=Libre+Baskerville:ital,wght@0,700;1,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet"/>
-<style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-
-  body {
-    background: #f5efe6;
-    font-family: sans-serif;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
-    padding: 3rem 2rem;
-  }
-
-  h1 {
-    font-family: sans-serif;
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: #999;
-    margin-bottom: 1rem;
-    text-align: center;
-  }
-
-  .options {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    width: 100%;
-    max-width: 700px;
-  }
-
-  .option {
-    background: #faf6f0;
-    border: 1px solid #e8ddd0;
-    border-radius: 4px;
-    padding: 3rem 2.5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.2rem;
-    position: relative;
-  }
-
-  .option-number {
-    position: absolute;
-    top: 1rem; left: 1.2rem;
-    font-size: 0.65rem;
-    font-weight: 700;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: #c9943a;
-  }
-
-  .option-label {
-    font-size: 0.65rem;
-    font-weight: 600;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: #b0a090;
-  }
-
-  /* ── OPTION 1: Elegant Script ── */
-  .logo-1 {
-    font-family: 'Pinyon Script', cursive;
-    font-size: 5rem;
-    color: #3a2214;
-    line-height: 1.1;
-    letter-spacing: 0.02em;
-  }
-
-  /* ── OPTION 2: Editorial Serif Stack ── */
-  .logo-2-wrap {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.1rem;
-  }
-  .logo-2-naomi {
-    font-family: 'Cormorant Upright', serif;
-    font-size: 1rem;
-    font-weight: 300;
-    letter-spacing: 0.55em;
-    text-transform: uppercase;
-    color: #b85c38;
-    margin-bottom: 0.1rem;
-  }
-  .logo-2-rule {
-    width: 180px;
-    height: 1px;
-    background: linear-gradient(to right, transparent, #c9943a, transparent);
-    margin: 0.3rem 0;
-  }
-  .logo-2-pies {
-    font-family: 'DM Serif Display', serif;
-    font-size: 5rem;
-    font-style: italic;
-    color: #3a2214;
-    line-height: 1;
-    letter-spacing: 0.02em;
-  }
-
-  /* ── OPTION 3: Classic Refined Serif ── */
-  .logo-3-wrap {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-  }
-  .logo-3-top {
-    font-family: 'Libre Baskerville', serif;
-    font-size: 0.65rem;
-    font-weight: 400;
-    letter-spacing: 0.35em;
-    text-transform: uppercase;
-    color: #c9943a;
-  }
-  .logo-3-name {
-    font-family: 'Libre Baskerville', serif;
-    font-size: 3.2rem;
-    font-weight: 700;
-    font-style: italic;
-    color: #3a2214;
-    letter-spacing: -0.01em;
-    line-height: 1;
-  }
-  .logo-3-sub {
-    font-family: 'Libre Baskerville', serif;
-    font-size: 0.65rem;
-    font-weight: 400;
-    letter-spacing: 0.35em;
-    text-transform: uppercase;
-    color: #7a5c48;
-  }
-  .logo-3-dots {
-    display: flex; gap: 0.5rem; align-items: center;
-  }
-  .logo-3-dots span {
-    width: 3px; height: 3px; border-radius: 50%;
-    background: #c9943a;
-    display: inline-block;
-  }
-  .logo-3-dots i {
-    font-size: 0.65rem;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    font-family: 'Libre Baskerville', serif;
-    font-style: normal;
-    color: #7a5c48;
-  }
-</style>
-</head>
-<body>
-
-<h1>Logo Options — Naomi's Pies</h1>
-
-<div class="options">
-
-  <!-- OPTION 1 -->
-  <div class="option">
-    <span class="option-number">Option 1</span>
-    <div class="logo-1">Naomi's Pies</div>
-    <span class="option-label">Flowing Script — Warm &amp; Personal</span>
-  </div>
-
-  <!-- OPTION 2 -->
-  <div class="option">
-    <span class="option-number">Option 2</span>
-    <div class="logo-2-wrap">
-      <div class="logo-2-naomi">Naomi's</div>
-      <div class="logo-2-rule"></div>
-      <div class="logo-2-pies">Pies</div>
-    </div>
-    <span class="option-label">Editorial Italic — Stylish &amp; Modern</span>
-  </div>
-
-  <!-- OPTION 3 -->
-  <div class="option">
-    <span class="option-number">Option 3</span>
-    <div class="logo-3-wrap">
-      <div class="logo-3-top">Handcrafted</div>
-      <div class="logo-3-name">Naomi's Pies</div>
-      <div class="logo-3-dots">
-        <span></span>
-        <i>Leander, Texas</i>
-        <span></span>
+ <p class="section-label">Our Story</p>
+    <h2 class="section-title">A Baker Born<br/><em>from Passion</em></h2>
+    <p class="section-body">
+      Since 2019, this kitchen has been a place of discovery, discipline, and deep love for the craft. Trained in Culinary Arts at St. Philip's College in San Antonio, the chef behind Golden Crust Co. has spent years perfecting her art — not following recipes, but creating them.
+      Since 2019, this kitchen has been a place of discovery, discipline, and deep love for the craft. Formally trained in Culinary Arts, the chef behind Golden Crust Co. has spent years perfecting her art — not following recipes, but creating them.
+    </p>
+    <p class="section-body" style="margin-top:1rem;">
+      From her signature blueberry-ginger pie to rich savory quiches made with farm-fresh custard, every bite tells a story of someone who chose quality over convenience — every single time.
+@@ -1029,28 +1029,28 @@
+        <div class="credential-icon">✦</div>
+        <div class="credential-text">
+          <strong>Culinary Arts Training Certificate</strong>
+          <span>St. Philip's College · San Antonio, TX</span>
+          <span>San Antonio, TX</span>
+        </div>
+      </div>
+      <div class="credential">
+        <div class="credential-icon">✦</div>
+        <div class="credential-text">
+          <strong>Training Since 2019</strong>
+          <span>6+ years in the kitchen, perfecting the craft</span>
+        </div>
+      </div>
+      <div class="credential">
+        <div class="credential-icon">✦</div>
+        <div class="credential-text">
+          <strong>Handmade Sugar-Free Amish Crust</strong>
+          <span>Every single pie, no shortcuts</span>
+        </div>
       </div>
     </div>
-    <span class="option-label">Classic Serif — Refined &amp; Trustworthy</span>
   </div>
+</section>
 
-</div>
-
-</body>
-</html>
+<!-- GALLERY -->
+<section class="specialties" id="gallery">
+  <div class="specialties-header">
+    <div>
